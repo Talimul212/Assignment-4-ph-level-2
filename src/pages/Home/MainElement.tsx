@@ -28,7 +28,17 @@ const MainElement = () => {
           🏆 Top Brands, Unbeatable Prices!
         </div>
       </div>
-
+      <section className="pt-10 ">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-900">
+            What Our Customers Say
+          </h2>
+          <p className="mt-3 text-gray-600">
+            Read reviews from our valued customers and share your experience
+            with us!
+          </p>
+        </div>
+      </section>
       <div>
         <Testimonial />
       </div>
