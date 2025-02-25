@@ -16,7 +16,7 @@ import "./styles.css";
 import { Autoplay, Pagination } from "swiper/modules";
 const HomeBanner = () => {
   return (
-    <div className="h-96 mx-auto w-[45%]">
+    <div className="h-96 mx-auto lg:w-[45%]">
       <Swiper
         spaceBetween={30}
         pagination={{

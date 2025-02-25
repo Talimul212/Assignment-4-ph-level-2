@@ -10,7 +10,7 @@ const BikeCard = () => {
   const [hovered, setHovered] = useState(null);
   return (
     <div>
-      <div className="grid grid-cols-2 gap-6 w-full ">
+      <div className="lg:grid grid-cols-2 gap-6 w-full ">
         {img.map((item, index: number) => (
           // card container
           <div
