@@ -5,6 +5,7 @@ import Login from "../../pages/Auth/Login";
 import MainElement from "../../pages/Home/MainElement";
 import DashboardLayOut from "../../Layout/DashboardLayOut";
 import ErrorPage from "../../pages/Error/ErrorPage";
+import AddBike from "../../pages/Module/Dashboard/AddBike";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,12 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <DashboardLayOut />,
-    children: [{}],
+    children: [
+      {
+        path: "/dashboard/productlisting",
+        element: <AddBike />,
+      },
+    ],
   },
 ]);
 export default router;

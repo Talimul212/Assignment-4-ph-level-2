@@ -3,7 +3,9 @@ import React, { useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { IoIosArrowDown, IoIosCode, IoIosSearch } from "react-icons/io";
 import { RxDashboard } from "react-icons/rx";
+import { FaRegAddressBook } from "react-icons/fa";
 import { GoPerson } from "react-icons/go";
+import { IoSearch } from "react-icons/io5";
 import {
   IoMoonOutline,
   IoNewspaperOutline,
@@ -11,15 +13,26 @@ import {
   IoSettingsOutline,
   IoSunnyOutline,
 } from "react-icons/io5";
+import logo from "../assets/bycicle.png";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 const DashboardLayOut = () => {
   const [isCollapse2, setIsCollapse2] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(true);
   return (
     <div>
-      <div className="bg-gray-800 h-16"></div>
+      <div className="bg-[#ff7b84d0] h-16 pt-4">
+        <div className="bg-blue-400  md:w-[25%] md:h-[60%] mx-auto p-5  flex items-center justify-center rounded-full cursor-pointer relative">
+          <IoSearch className="text-[1.3rem] text-amber-50 ml-auto" />
+
+          <input
+            type="text"
+            placeholder="Search..."
+            className="border border-border absolute top-[2px] bg-amber-50 left-[3px] h-[90%] w-[85%] py-3 px-4 outline-none rounded-full"
+          />
+        </div>
+      </div>
       <div className="grid grid-cols-12">
         <div className=" col-span-2">
           <aside
@@ -38,7 +51,7 @@ const DashboardLayOut = () => {
                   className="flex items-center justify-center border-[1px] rounded-md"
                 >
                   <img
-                    src="bycicle.png"
+                    src={logo}
                     alt="logo"
                     className="w-[90px] my-[-10px] cursor-pointer"
                   />
@@ -46,7 +59,7 @@ const DashboardLayOut = () => {
               ) : (
                 <Link to="/">
                   <img
-                    src="bycicle.png"
+                    src={logo}
                     alt="logo"
                     className="w-[45px]   mx-auto cursor-pointer"
                   />
@@ -81,12 +94,12 @@ const DashboardLayOut = () => {
             </div>
 
             {/* collapse button */}
-            <div
+            {/* <div
               className="bg-gray-200 p-[5px] rounded-md w-max absolute top-[50px] right-[-20px] cursor-pointer"
               onClick={() => setIsCollapse2(!isCollapse2)}
             >
               <IoIosCode className="text-[1.5rem] text-gray-500" />
-            </div>
+            </div> */}
 
             {/* general section */}
             <div
@@ -108,25 +121,27 @@ const DashboardLayOut = () => {
                     isCollapse2 ? "justify-between" : "justify-center"
                   } flex items-center w-full hover:bg-gray-50 p-[5px] rounded-md cursor-pointer transition-all duration-200 relative group`}
                 >
-                  <div className="flex items-center gap-[8px]">
-                    <RxDashboard className="text-[1.3rem] text-gray-500" />
-                    <p
-                      className={`${
-                        isCollapse2 ? "inline" : "hidden"
-                      } text-[1rem] font-[400] text-gray-500`}
-                    ></p>
-                  </div>
+                  <Link to="/dashboard/productlisting">
+                    <div className="flex items-center gap-[8px]">
+                      <FaRegAddressBook className="text-[1.3rem] text-gray-500" />
+                      <p
+                        className={`${
+                          isCollapse2 ? "inline" : "hidden"
+                        } text-[1rem] font-[400] text-gray-500`}
+                      ></p>
+                    </div>
 
-                  {/* tooltip */}
-                  <div
-                    className={`${
-                      isCollapse2 ? "hidden" : "inline"
-                    } absolute top-0 right-[-108px] translate-x-[20px] opacity-0 z-[-1] group-hover:translate-x-0 group-hover:opacity-100 group-hover:z-[1] transition-all duration-500`}
-                  >
-                    <p className="text-[0.9rem] w-max bg-gray-600 text-secondary rounded px-3 py-[5px]">
-                      Dashboard
-                    </p>
-                  </div>
+                    {/* tooltip */}
+                    <div
+                      className={`${
+                        isCollapse2 ? "hidden" : "inline"
+                      } absolute top-0 right-[-108px] translate-x-[20px] opacity-0 z-[-1] group-hover:translate-x-0 group-hover:opacity-100 group-hover:z-[1] transition-all duration-500`}
+                    >
+                      <p className="text-[0.9rem] w-max bg-gray-600 text-secondary rounded px-3 py-[5px]">
+                        Add Bike
+                      </p>
+                    </div>
+                  </Link>
                 </div>
                 <div
                   className={`${
@@ -379,6 +394,9 @@ const DashboardLayOut = () => {
               </div>
             </div>
           </aside>
+        </div>
+        <div className=" col-span-10">
+          <Outlet />
         </div>
       </div>
     </div>

@@ -41,18 +41,18 @@ const Registation = () => {
   return (
     <div>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6  lg:px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <div className="sm:mx-auto mt-3 sm:w-full sm:max-w-sm">
           <img
             alt="Your Company"
             src="bycicle.png"
             className="mx-auto h-20 w-auto"
           />
-          <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+          <h2 className="mt-5 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
             Registration to Create a new account
           </h2>
         </div>
 
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <div className="mt-5 shadow-xl rounded p-3 border-[1px] border-amber-100 sm:mx-auto sm:w-full sm:max-w-sm">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label
