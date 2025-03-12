@@ -8,6 +8,7 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/react";
+import { CiShoppingCart } from "react-icons/ci";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 function classNames(...classes: string[]) {
@@ -65,9 +66,15 @@ const Navbar = () => {
                 ))}
               </div>
             </div>
+            <Link
+              to="/cartdetails"
+              className="flex  absolute  right-[260px] mt-1 justify-center items-center text-stone-100 font-bold"
+            >
+              <CiShoppingCart aria-hidden="true" className="size-6" />
+            </Link>
           </div>
           <div className="bg-[#f73a47] p-3 absolute  right-[202px] h-20 rounded-b-2xl shadow-2xl w-[40px]"></div>
-          <div className="absolute bg-gray-800  p-3  rounded-e-xl inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <div className="absolute bg-gray-800  p-3 mt-[-4px] rounded-e-xl inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <button
               type="button"
               className="relative rounded-full p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
@@ -77,13 +84,13 @@ const Navbar = () => {
               <BellIcon aria-hidden="true" className="size-6" />
             </button>
             <Link
-              className="relative rounded-full  p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
+              className="relative rounded-full  p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white mr-1 focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
               to="/registation"
             >
               Registation
             </Link>
             {/* Profile dropdown */}
-            <Menu as="div" className="relative ml-3">
+            <Menu as="div" className="relative mr-1 ">
               <div>
                 <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
                   <span className="absolute -inset-1.5" />

@@ -7,6 +7,7 @@ import DashboardLayOut from "../../Layout/DashboardLayOut";
 import ErrorPage from "../../pages/Error/ErrorPage";
 import AddBike from "../../pages/Module/Dashboard/AddBike";
 import OrderList from "../../pages/Module/Dashboard/OrderList";
+import CartModel from "../../Components/Model/CartModel";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/cartdetails",
+        element: <CartModel />,
       },
     ],
   },

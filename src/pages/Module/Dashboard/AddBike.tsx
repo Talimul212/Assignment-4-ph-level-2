@@ -12,7 +12,7 @@ import { GiTennisRacket } from "react-icons/gi";
 import { IoChevronDown } from "react-icons/io5";
 import BikeListTable from "../../../Components/Table/BikeListTable";
 const AddBike = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState("Select Option");
 
