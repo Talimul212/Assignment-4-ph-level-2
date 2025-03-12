@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // react icons
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { FaOpencart } from "react-icons/fa";
 import { IoIosArrowDown, IoIosCode, IoIosSearch } from "react-icons/io";
 import { RxDashboard } from "react-icons/rx";
 import { FaRegAddressBook } from "react-icons/fa";
@@ -23,18 +24,18 @@ const DashboardLayOut = () => {
   return (
     <div>
       <div className="bg-[#ff7b84d0] h-16 pt-4">
-        <div className="bg-blue-400  md:w-[25%] md:h-[60%] mx-auto p-5  flex items-center justify-center rounded-full cursor-pointer relative">
+        <div className="md:w-[25%] md:h-[60%] mx-auto p-5  flex items-center justify-center rounded-full cursor-pointer relative">
           <IoSearch className="text-[1.3rem] text-amber-50 ml-auto" />
 
           <input
             type="text"
             placeholder="Search..."
-            className="border border-border absolute top-[2px] bg-amber-50 left-[3px] h-[90%] w-[85%] py-3 px-4 outline-none rounded-full"
+            className="border border-gray-100 absolute top-[2px] bg-amber-50 left-[3px] h-[90%] w-[85%] py-3 px-4 outline-none rounded-full"
           />
         </div>
       </div>
       <div className="grid grid-cols-12">
-        <div className=" col-span-2">
+        <div className=" col-span-1">
           <aside
             className={`bg-white mt-2 boxShadow rounded-md transition-all duration-300 ease relative border-[1px] ${
               isCollapse2 ? "w-[85%] duration-300" : "w-20 duration-300"
@@ -135,7 +136,7 @@ const DashboardLayOut = () => {
                     <div
                       className={`${
                         isCollapse2 ? "hidden" : "inline"
-                      } absolute top-0 right-[-108px] translate-x-[20px] opacity-0 z-[-1] group-hover:translate-x-0 group-hover:opacity-100 group-hover:z-[1] transition-all duration-500`}
+                      } absolute top-0 right-[-75px] translate-x-[20px] opacity-0 z-[-1] group-hover:translate-x-0 group-hover:opacity-100 group-hover:z-[1] transition-all duration-500`}
                     >
                       <p className="text-[0.9rem] w-max bg-gray-600 text-secondary rounded px-3 py-[5px]">
                         Add Bike
@@ -161,20 +162,21 @@ const DashboardLayOut = () => {
                   <div
                     className={`${
                       isCollapse2 ? "hidden" : "inline"
-                    } absolute top-0 right-[-99px] translate-x-[20px] opacity-0 z-[-1] group-hover:translate-x-0 group-hover:opacity-100 group-hover:z-[1] transition-all duration-500`}
+                    } absolute top-0 right-[-65px] translate-x-[20px] opacity-0 z-[-1] group-hover:translate-x-0 group-hover:opacity-100 group-hover:z-[1] transition-all duration-500`}
                   >
                     <p className="text-[0.9rem] w-max bg-gray-600 text-secondary rounded px-3 py-[5px]">
                       Audience
                     </p>
                   </div>
                 </div>
-                <div
+                <Link
+                  to="/dashboard/orders"
                   className={`${
                     isCollapse2 ? "justify-between" : "justify-center"
                   } flex items-center w-full hover:bg-gray-50 p-[5px] rounded-md cursor-pointer transition-all duration-200 relative group`}
                 >
                   <div className="flex items-center gap-[8px]">
-                    <IoNewspaperOutline className="text-[1.3rem] text-gray-500" />
+                    <FaOpencart className="text-[1.3rem] text-gray-500" />
                     <p
                       className={`${
                         isCollapse2 ? "inline" : "hidden"
@@ -186,13 +188,13 @@ const DashboardLayOut = () => {
                   <div
                     className={`${
                       isCollapse2 ? "hidden" : "inline"
-                    } absolute top-0 right-[-76px] translate-x-[20px] opacity-0 z-[-1] group-hover:translate-x-0 group-hover:opacity-100 group-hover:z-[1] transition-all duration-500`}
+                    } absolute top-0 right-[-55px] translate-x-[20px] opacity-0 z-[-1] group-hover:translate-x-0 group-hover:opacity-100 group-hover:z-[1] transition-all duration-500`}
                   >
                     <p className="text-[0.9rem] w-max bg-gray-600 text-secondary rounded px-3 py-[5px]">
-                      Posts
+                      Orders
                     </p>
                   </div>
-                </div>
+                </Link>
                 <div
                   className={`${isCollapse2 && "justify-center"} ${
                     isDropdownOpen && "bg-gray-50"
@@ -395,7 +397,7 @@ const DashboardLayOut = () => {
             </div>
           </aside>
         </div>
-        <div className=" col-span-10">
+        <div className=" col-span-11 ">
           <Outlet />
         </div>
       </div>

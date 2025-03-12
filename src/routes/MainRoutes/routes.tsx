@@ -6,6 +6,7 @@ import MainElement from "../../pages/Home/MainElement";
 import DashboardLayOut from "../../Layout/DashboardLayOut";
 import ErrorPage from "../../pages/Error/ErrorPage";
 import AddBike from "../../pages/Module/Dashboard/AddBike";
+import OrderList from "../../pages/Module/Dashboard/OrderList";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/productlisting",
         element: <AddBike />,
+      },
+      {
+        path: "/dashboard/orders",
+        element: <OrderList />,
       },
     ],
   },
